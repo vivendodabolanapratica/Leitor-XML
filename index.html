@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coimbra FC - Elite Performance Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fifa-dark: #020617;
+            --fifa-blue: #0050FF;
+            --fifa-gold: #D4AF37;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+        .oswald { font-family: 'Oswald', sans-serif; }
+        
+        /* Premium Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* HUD Decorative Borders */
+        .hud-corner {
+            position: relative;
+        }
+        .hud-corner::before, .hud-corner::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #0050FF;
+            opacity: 0.5;
+        }
+        .hud-top-left::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+        .hud-top-right::after { top: 0; right: 0; border-left: 0; border-bottom: 0; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            #printable-report {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .print-break-inside-avoid { page-break-inside: avoid; }
+            @page { margin: 0; size: A4 portrait; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+</head>
+<body class="min-h-screen">
+    <div id="root"></div>
+</body>
+</html>
